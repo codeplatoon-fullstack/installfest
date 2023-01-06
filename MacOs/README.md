@@ -10,7 +10,8 @@ We are going to install everything that you will need for this course. Please do
 3. Homebrew
 4. Node.js 
 5. Python
-6. PostgreSQL
+6. Adding an Alias
+7. PostgreSQL
 
 ## Prerequesites
 
@@ -171,6 +172,51 @@ folder we should see a bin folder holding an `activate` script, a `pip` script,
 and several others. (ensure both the activate and pip scripts are present if not
 contanct an instructor)
 
+### Adding an Alias
+#### Using bash
+To save an alias in bash we will run the following commands in our bash terminal:
+
+```bash
+    #This command will open vim and get/create a .bash_profile
+    vim ~/.bash_profile
+    #press the 'i' key on your keyboard to enter --INSERT-- mode. This will allow you to enter text into the .bash_profile
+    #enter the following:
+    alias python=python3
+    #Now we can exit --INSERT-- mode by pressing the 'ESC' key on your keyboard
+    #Save the file changes and exit vim by running the following:
+    :wq
+```
+
+Now we can access our alias by running the next command:
+
+```bash
+    source ~/.bash_profile
+```
+
+We can now use `python3` by typing in `python` on our terminal.
+
+#### Using zsh
+
+To save an alias in zsh we will run the following commands in our bash terminal:
+
+```bash
+    #This command will open vim and get/create a .zshrc file
+    vim ~/.zshrc
+    #press the 'i' key on your keyboard to enter --INSERT-- mode. This will allow you to enter text into the .zshrc
+    #enter the following:
+    alias python=python3
+    #Now we can exit --INSERT-- mode by pressing the 'ESC' key on your keyboard
+    #Save the file changes and exit vim by running the following:
+    :wq
+```
+
+Now we can access our alias by running the next command:
+
+```bash
+    source ~/.zshrc
+```
+We can now use `python3` by typing in `python` on our terminal.
+
 ### PostgreSQL
 
 In VS code, inside of your `bash` terminal. We will install PostgreSQL
@@ -202,4 +248,5 @@ To enter PostgreSQL we will have to enter the postgres account.
 - [Homebrew](https://brew.sh)
 - [Node and Homebrew](https://changelog.com/posts/install-node-js-with-homebrew-on-os-x)
 - [Python and Homebrew](https://docs.python-guide.org/starting/install3/osx/)
+- [Alias in .zshrc](https://dev.to/stuartcreed/how-to-add-aliases-to-your-terminal-on-mac-os-53dl)
 - [PostgreSQL and Homebrew](https://www.moncefbelyamani.com/how-to-install-postgresql-on-a-mac-with-homebrew-and-lunchy/)
