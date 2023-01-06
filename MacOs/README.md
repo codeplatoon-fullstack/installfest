@@ -26,8 +26,11 @@ We are going to install everything that you will need for this course. Please do
 - Open VSCode and open the `Command Palette` by pressing (Cmd + Shift + P)
 - Type `shell command` into the Command Palette and click on the following option: `Shell Command: Install 'code' command in PATH`
 - Close VSCode
-- Now you can open files from your terminal in VSCode.
+- Now you can open files from your terminal in VSCode by useing the command `code`.
 
+```bash
+    code <filename>
+```
 
 ## XCode
 
@@ -185,6 +188,18 @@ Now we can make sure PostgreSQL is started:
 
 To enter PostgreSQL we will have to enter the postgres account.
 ```bash
-    #PostgreSQL
+    #Enter PostgreSQL
     psql postgres
+    #You should see your terminal change into:
+    postgres=# 
+    #To exit PostgreSQL run the following command:
+    \q
 ```
+
+## Resources
+
+- [Use VScode with `code`](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line)
+- [Homebrew](https://brew.sh)
+- [Node and Homebrew](https://changelog.com/posts/install-node-js-with-homebrew-on-os-x)
+- [Python and Homebrew](https://docs.python-guide.org/starting/install3/osx/)
+- [PostgreSQL and Homebrew](https://www.moncefbelyamani.com/how-to-install-postgresql-on-a-mac-with-homebrew-and-lunchy/)
