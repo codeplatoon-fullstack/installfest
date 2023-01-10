@@ -3,7 +3,7 @@
 Homebrew is a package manager for MacOS. We can install it by running the following:
 
 ```sh
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    /bin/zsh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
 Let's check if we've installed homebrew correctly.
