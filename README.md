@@ -4,14 +4,11 @@
 ## Topics Covered / Goals
 - Get your local machine set up to start the course
 - Exploring your IDE (VSCode)
-- Be able to navigate your computer using the command line
-- Create and manage git repositories using the command line
 
 ## Computer Setup (Mac, Linux, & Windows)
 Before we get started, just know that this will be chaos. Your goal is to get a working environment. Please follow along closely!
 - [Slack](https://slack.com/downloads) - for all communication purposes
 - [Zoom](https://zoom.us/support/download)
-- Sign up for [Operation Code](https://operationcode.org/join)
 
 
 ## Visual Studio Code
