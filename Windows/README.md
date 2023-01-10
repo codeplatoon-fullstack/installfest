@@ -147,7 +147,7 @@ In VS code, inside of your `bash` terminal. We will install `python`
 by running the following command
 
 ```bash
-    sudo apt intall python
+    sudo apt intall python3
 ```
 
 Now we want to create a folder with a python file 
