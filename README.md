@@ -9,9 +9,12 @@
 Before we get started, just know that this will be chaos. Your goal is to get a working environment. Please follow along closely!
 - [Slack](https://slack.com/downloads) - for all communication purposes
 - [Zoom](https://zoom.us/support/download)
+### MacOs
 - [Mac](https://github.com/codeplatoon-fullstack/installfest/tree/main/MacOs)
+### Windows
 - [Windows](https://github.com/codeplatoon-fullstack/installfest/tree/main/Windows)
-- [Linux]()
+### Linux
+- [Linux](https://github.com/codeplatoon-fullstack/installfest/tree/main/Linux)
 
 
 ## Visual Studio Code
