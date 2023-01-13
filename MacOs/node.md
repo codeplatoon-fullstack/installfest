@@ -1,8 +1,8 @@
 # Node.js & npm
 
-Node does not come built in to Mac, so we need to install it. First, we'll install `npm`, the 'Node package manager'. In VS code, inside of your `bash` terminal. We will install `Node.js` and `npm` by running the following command:
+Node does not come built in to Mac, so we need to install it. First, we'll install `npm`, the 'Node package manager'. In VS code, inside of your `zsh` terminal. We will install `Node.js` and `npm` by running the following command:
 
-```bash
+```zsh
    brew install npm
 ```
 
@@ -21,7 +21,7 @@ Download the latest stable (production-ready, non-experimental) version of node.
 
 After both `Node.js` and `npm` are installed we could create a folder with a file and test that
 we could run JavaScript using node.
-```bash
+```zsh
     #create a folder
     mkdir nodetest
 
@@ -34,7 +34,7 @@ we could run JavaScript using node.
     #on hello.js
     console.log("Hello World!");
 
-    #on bash terminal
+    #on zsh terminal
     node hello.js
 
     #we should see the following on the terminal

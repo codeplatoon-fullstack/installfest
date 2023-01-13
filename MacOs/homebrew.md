@@ -2,13 +2,13 @@
 
 Homebrew is a package manager for MacOS. We can install it by running the following:
 
-```sh
+```zsh
     /bin/zsh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
 Let's check if we've installed homebrew correctly.
 
-```sh
+```zsh
     #run the following to check where brew is located
     which brew
     #We should see the path below
@@ -17,13 +17,13 @@ Let's check if we've installed homebrew correctly.
 
 Homebrew is going to do a lot of work for us in that it manages our software versions, so always ensure that it's up-to-date and that it's healthy.
 
-```sh
+```zsh
     brew update
 ```
 
 and
 
-```sh
+```zsh
     brew doctor
 ```
 

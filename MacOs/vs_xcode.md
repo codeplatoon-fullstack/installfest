@@ -7,7 +7,7 @@
 - Close VSCode
 - Now you can open files from your terminal in VSCode by useing the command `code`.
 
-```bash
+```zsh
     code <filename>
 ```
 
@@ -15,7 +15,7 @@
 
 Run the following command in the terminal.
 
-```sh
+```zsh
     xcode-select --install
 ```
 

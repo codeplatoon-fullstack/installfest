@@ -1,20 +1,20 @@
 # PostgreSQL
 
-In VS code, inside of your `bash` terminal. We will install PostgreSQL
+In VS code, inside of your `zsh` terminal. We will install PostgreSQL
 by running the following command:
 
-```bash
+```zsh
     brew install postgresql
 ```
 
 Now we can make sure PostgreSQL is started:
 
-```bash
+```zsh
     brew services restart postgresql@14
 ```
 
 To enter PostgreSQL we will have to enter the postgres account.
-```bash
+```zsh
     #Enter PostgreSQL
     psql postgres
     #You should see your terminal change into:

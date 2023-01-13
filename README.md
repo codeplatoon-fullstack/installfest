@@ -11,6 +11,7 @@ Before we get started, just know that this will be chaos. Your goal is to get a 
 - [Zoom](https://zoom.us/support/download)
 - [Mac](https://github.com/codeplatoon-fullstack/installfest/tree/main/MacOs)
 - [Windows](https://github.com/codeplatoon-fullstack/installfest/tree/main/Windows)
+- [Linux]()
 
 
 ## Visual Studio Code
