@@ -9,7 +9,7 @@ We are going to install everything that you will need for this course. Please do
 4. Python
 5. NPM/Node
 6. Git
-7. Addding Alisases
+7. Adding Alisases
 8. PostgreSQL
 
 ## VSCode with `code`
