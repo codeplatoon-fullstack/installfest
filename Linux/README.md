@@ -1,27 +1,26 @@
-# Windows Installfest
+# Linux Installfest
 
 ## Prerequesites
 
-- Make sure Windows Update has been run recently
+- Make sure your system is up to date and run any 'check for updates' command that is built into the OS
 
 ## What we'll cover
 
 We are going to install everything that you will need for this course. Please do this in order!
 
 1. Visual Studio Code & `code`
-2. Windows Subsystem for Linux (WSL)
-3. Package Management
-4. Python
-5. Node
-6. Git
-7. Alisases
-8. PostgreSQL
+2. Package Management
+3. Python
+4. Node
+5. Git
+6. Alisases
+7. PostgreSQL
 
 ## Visual Studio Code & `code`
 
 There are many IDEs (integrated development environments) out there that developers can use. For our class, we're going to be using Visual Studio Code, a free IDE created by Microsoft. VSCode is a powerful, flexible editor that supports many different coding languages. VSCode is also highly extensible, with a rich ecosystem of plugins.
 
-- Download [Visual Studio Code](https://code.visualstudio.com/download) and click on the general Windows installer.
+- Download [Visual Studio Code](https://code.visualstudio.com/download) and click on the `.deb` installer (assuming you are on Ubuntu, otherwise you are on your own).
 - During install, VSCode will by default ask to add itself to your system's PATH envirnmental variable - keep this box checked!
 - This will allow you to open VSCode from the terminal using the command `code` like so:
 
@@ -36,45 +35,13 @@ Test that this `code` command actually works before moving on. You may need to c
 
 > A note about extensions: You are free to install any/all extensions you find on the VSCode marketplace as they suit you and we will be recommending some throughout the course. That said, I want to strongly advise you to _not_ install any AI code-completion tool like Github Copilot or Tabnine. Your goal in this course is to learn to program and these tools tend to interfere with that process by giving you regular autocompletion options that are not accurate solutions to the problem at hand. These tools have their place, but it is generally a bad habit to copy/paste code you do not understand yourself and these tools make that a seamless process, so please do avoid them for the duration of this course.
 
-## Windows Subsystem for Linux (WSL)
-
-The modern approach to developing on Windows is to install a version of Linux _within_ Windows. This seems tricky, and is sometimes, but it ends up being a much better way to do things in a terminal environment with Windows.
-
-First, search for `Windows PowerShell` in the start menu, then right click on it and select 'Run as administrator'. The type:
-
-```bash
-$ wsl --install
-```
-
-By default this will install WSL2 on your system and start downloading a version of Linux called Ubuntu. This will take some time and require you to restart your PC when done.
-
-Once restarted an Ubuntu terminal should automatically run and it will ask you to provide a username and password. Note, this username and password is solely for this Linux distribution and need not match your Windows account info. That said, the password you choose should be relatively simple as you will need to type it in often.
-
-```bash
-# username will need to be all lowercase
-$ Enter new UNIX username: <username>
-# Once you enter the name it will prompt for your password. Note that you will not see any feedback while typing, not even '*' type masking
-$ New password:
-$ Retype new password:
-```
-
-If you see an output at this below than you have succesfully setup your WSL environment:
-
-```bash
-<username>@<computer_name> $
-```
-
-In the future you can open up a WSL terminal by searching the Start menu for 'Ubuntu'. I also highly recommend installing the app Windows Terminal from the Windows Store and configuring that to select Ubuntu as the environment by default, as it's a much better terminal experience than the default Ubuntu program.
-
 ## Package Management
-
-Now that we are in our WSL environment, package maangement is identical to what it would be like on Linux, so we will be using `apt`.
 
 Advanced Package Tool (APT, or `apt`) is a built-in package manager for Ubuntu that handles the installation, versioning and removal of software.
 
 ### `sudo`
 
-Some commands (especially ones involved in downloading new software) require elevated permission compared to what a regular user normally posesses. This is a somewhat advanced topic to go into detail about, but the basic solution to temporarily elevating one's permissions is to use the command `sudo`. `sudo` stands for Super User DO and is a way of temporarily elevating the current user's permissions by first prompting them for their password (it's the same password you used when creating your default Ubuntu user).
+Some commands (especially ones involved in downloading new software) require elevated permission compared to what a regular user normally posesses. This is a somewhat advanced topic to go into detail about, but the basic solution to temporarily elevating one's permissions is to use the command `sudo`. `sudo` stands for Super User DO and is a way of temporarily elevating the current user's permissions by first prompting them for their password (it's the same password you use to login).
 
 ### Updating
 
@@ -157,10 +124,10 @@ Close and reopen your terminal if necessary and test that both the commands `nod
 
 ## `git`
 
-Git may or may not be install by defaullt on your system, but to make sure use `brew` to install it.
+Git may or may not be install by defaullt on your system, but to make sure use `apt` to install it.
 
 ```bash
-$ brew install git
+$ sudo apt-get install git
 ```
 
 Next, we'll configure Git with sensible defaults:
@@ -183,7 +150,7 @@ You can confirm git is configured correctly by running `git config --global -l`.
 Github's preferred way you interact with it now is a command line tool called `gh`. First, you will need a github account to continue, then, in your terminal type:
 
 ```bash
-$ brew install gh
+$ sudo apt-get install gh
 ```
 
 Once downloaded type:
@@ -278,8 +245,3 @@ postgres=# \q
 ```
 
 You will still be logged in as the user 'postgres' even after this step, so either close the terminal outright or press `Ctrl-D` to return to the regular terminal environment you began in.
-
-## Resources for Troubleshooting
-
-- [WSL](https://learn.microsoft.com/en-us/windows/wsl/install)
-- [WSL Best Practices](https://learn.microsoft.com/en-us/windows/wsl/setup/environment)

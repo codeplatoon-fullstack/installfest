@@ -1,15 +1,23 @@
-# Windows Installfest
+# MacOS Installfest
 
 ## Prerequesites
 
-- Make sure Windows Update has been run recently
+- Make sure you have an Apple ID
+- Download XCode from the Mac App Store (this can take a very long time, and is large)
+- Ensure that you're running the most recent operating system. You can check your version by going to "System Preferences" and clicking on "Software Update"
 
 ## What we'll cover
 
 We are going to install everything that you will need for this course. Please do this in order!
 
-1. Visual Studio Code & `code`
-2. Windows Subsystem for Linux (WSL)
+# MacOS Installfest
+
+## What we'll cover
+
+We are going to install everything that you will need for this course. Please do this in order!
+
+1. XCode
+2. Visual Studio Code & `code`
 3. Package Management
 4. Python
 5. Node
@@ -17,12 +25,27 @@ We are going to install everything that you will need for this course. Please do
 7. Alisases
 8. PostgreSQL
 
+## XCode
+
+MacOS has a default terminal application called Terminal. This will suffice, but if you are looking for an alternative [iterm2](https://iterm2.com/) is a popular choice.
+
+Run the following command in the terminal.
+
+```bash
+$ xcode-select --install
+```
+
 ## Visual Studio Code & `code`
 
 There are many IDEs (integrated development environments) out there that developers can use. For our class, we're going to be using Visual Studio Code, a free IDE created by Microsoft. VSCode is a powerful, flexible editor that supports many different coding languages. VSCode is also highly extensible, with a rich ecosystem of plugins.
 
-- Download [Visual Studio Code](https://code.visualstudio.com/download) and click on the general Windows installer.
-- During install, VSCode will by default ask to add itself to your system's PATH envirnmental variable - keep this box checked!
+This installs the Command Line Tools package via the Terminal application. This is to ensure you have it installed correctly and in the correct path.
+
+- Download [Visual Studio Code](https://code.visualstudio.com/download) and click on the Mac installer. This will hopefully figure it out on its own but the version it picks will differ based on if your computer has an Intel chip or the more modern Apple Silicon for the CPU, so if you run into errors at this step this is likely why.
+- Once VSCode is successfully installed, please ensure that VSCode could be found inside your Applications folder. If it isn't in your `Applications`, it will be located under `Downloads`. Grab the VSCode application and drag it into your `Applications` folder.
+- Open VSCode and open the `Command Palette` by pressing (Cmd + Shift + P)
+- Type `shell command` into the Command Palette and click on the following option: `Shell Command: Install 'code' command in PATH`
+- Close VSCode
 - This will allow you to open VSCode from the terminal using the command `code` like so:
 
 ```bash
@@ -36,85 +59,75 @@ Test that this `code` command actually works before moving on. You may need to c
 
 > A note about extensions: You are free to install any/all extensions you find on the VSCode marketplace as they suit you and we will be recommending some throughout the course. That said, I want to strongly advise you to _not_ install any AI code-completion tool like Github Copilot or Tabnine. Your goal in this course is to learn to program and these tools tend to interfere with that process by giving you regular autocompletion options that are not accurate solutions to the problem at hand. These tools have their place, but it is generally a bad habit to copy/paste code you do not understand yourself and these tools make that a seamless process, so please do avoid them for the duration of this course.
 
-## Windows Subsystem for Linux (WSL)
-
-The modern approach to developing on Windows is to install a version of Linux _within_ Windows. This seems tricky, and is sometimes, but it ends up being a much better way to do things in a terminal environment with Windows.
-
-First, search for `Windows PowerShell` in the start menu, then right click on it and select 'Run as administrator'. The type:
-
-```bash
-$ wsl --install
-```
-
-By default this will install WSL2 on your system and start downloading a version of Linux called Ubuntu. This will take some time and require you to restart your PC when done.
-
-Once restarted an Ubuntu terminal should automatically run and it will ask you to provide a username and password. Note, this username and password is solely for this Linux distribution and need not match your Windows account info. That said, the password you choose should be relatively simple as you will need to type it in often.
-
-```bash
-# username will need to be all lowercase
-$ Enter new UNIX username: <username>
-# Once you enter the name it will prompt for your password. Note that you will not see any feedback while typing, not even '*' type masking
-$ New password:
-$ Retype new password:
-```
-
-If you see an output at this below than you have succesfully setup your WSL environment:
-
-```bash
-<username>@<computer_name> $
-```
-
-In the future you can open up a WSL terminal by searching the Start menu for 'Ubuntu'. I also highly recommend installing the app Windows Terminal from the Windows Store and configuring that to select Ubuntu as the environment by default, as it's a much better terminal experience than the default Ubuntu program.
-
 ## Package Management
 
-Now that we are in our WSL environment, package maangement is identical to what it would be like on Linux, so we will be using `apt`.
-
-Advanced Package Tool (APT, or `apt`) is a built-in package manager for Ubuntu that handles the installation, versioning and removal of software.
-
-### `sudo`
-
-Some commands (especially ones involved in downloading new software) require elevated permission compared to what a regular user normally posesses. This is a somewhat advanced topic to go into detail about, but the basic solution to temporarily elevating one's permissions is to use the command `sudo`. `sudo` stands for Super User DO and is a way of temporarily elevating the current user's permissions by first prompting them for their password (it's the same password you used when creating your default Ubuntu user).
-
-### Updating
-
-The `update` command in apt will fetch a list of packages from an external source that are available for download. This list changes frequently so it's important to run the update command before installing anything to ensure you will be fetching the latest package and not an outdated one.
+[Homebrew](https://brew.sh/) is a package manager for MacOS. You can install it by running the following command:
 
 ```bash
-# update the list of external packages that are available for install
-$ sudo apt-get update
-# you will be prompted for your password at this point
+$ /bin/zsh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
+
+> It isn't important to understand the details but `zsh` is a specific shell (the default on modern macs but older ones might use bash) and `curl` is a program that allows us to install a file from a url.
+
+Let's check if we've installed homebrew correctly. You may need to close and reopen your terminal first.
+
+```bash
+$ brew
+```
+
+If you see a list of further options it is working. If you are getting a message that the command is not found something went wrong.
+
+Homebrew is going to do a lot of work for us in that it manages our software versions, so always ensure that it's up-to-date and that it's healthy. First run:
+
+```bash
+# grabs a list of all the current packages you can install
+$ brew update
+```
+
+then:
+
+```bash
+$ brew doctor
+```
+
+`brew doctor` may tell you a lot of stuff and if its complex you will want to reach out to one of us. We're ideally shooting for a message like this:
+
+```bash
+$ brew doctor
+# Your system is ready to brew.
+```
+
+Warnings are good to read but are not mandatory to fix, so continue on for now and reach out if you hit a snag down the line.
 
 ## Python
 
-Python comes built in with Ubuntu but to ensure that we have the must up to date version, let's run the following commands:
+MacOS will have a `python` command installed by default but it will be Python 2.7, which we do not use in this course and as of January 2023 is no longer even supported.
 
-```bash
-$ sudo apt-get install python3
-$ sudo apt-get install python3-pip
-$ sudo apt-get install python3-setuptools
+Install an up-to-date version of Python3 from your terminal by running:
+
+```zsh
+$ brew install python
 ```
 
-> Note: if you ever need to install multiple packages simultaneously, apt-get supports this like so:
->
-> ```bash
-> $ sudo apt-get install python3 python3-pip python3-setuptools
-> ```
->
-> This is just a matter of convenience though, installing the packages as seperate commands will result in the same outcome
+test that you now have a command called `python3` installed. Later we will make is so typing `python` invokes this command.
 
-Test that you can run the commands `python3` and `pip`. For `pip` you will simply see some output indicating it's usage, but as long as it recognizes the command as existing you are good. As per usual you may need to close and reopen your terminal to see these working.
+This install should also include python's package manager, `pip`. To test this enter the command:
+
+```bash
+$ python3 -m ensurepip
+```
+
+followed by:
+
+```bash
+$ pip3
+```
+
+As long as the `pip3` command is recognized, you are good.
 
 ### Python Virtual Environment
 
-Python uses the concept of a 'virtual envrionment' to install packages through pip uniquely for a given project. In order to make creating such environments possible first install the necessary tool:
-
-```bash
-$ sudo apt-get install python3.10-venv
-```
-
-Now create a new project with a Python virtual environment like so:
+Python uses the concept of a 'virtual envrionment' to install packages through pip uniquely for a given project. Create a new project with a Python virtual environment like so:
 
 ```bash
 $ python3 -m venv test_project
@@ -146,7 +159,7 @@ In this section, we'll use `apt` to install `npm`, the default package manager f
 
 ```bash
 # use apt to install npm
-$ sudo apt-get install npm
+$ brew install npm
 # use npm to install n (-g means globally, as opposed to in a specific project/folder)
 $ sudo npm install -g n
 # use n to install the latest stable version of node
@@ -206,21 +219,25 @@ $ rm -rf installfest
 
 ## Alisases
 
-Every time you open your terminal a special file will automatically be read from to do any necessary 'setup' type work. Assuming the terminal you are using is `bash` this file will be called `.bash_profile`. If you are using `zsh` it will `.zshrc`. If you are unsure what terminal you are running type:
+Every time you open your terminal a special file will automatically be read from to do any necessary 'setup' type work. Assuming the terminal you are using is `zsh` this file will be called `.zshrc`. If you are using `bash` (the default on older macs) it will be `.bash_profile`. If you are unsure what terminal you are running type:
 
 ```bash
 $ echo $SHELL
 ```
 
-The output of this will tell you what shell you are using, which can differ based on your flavor of Linux.
-
 Open this file in VSCode like so:
+
+```bash
+$ code ~/.zshrc
+```
+
+or alternatively if you are running `bash`:
 
 ```bash
 $ code ~/.bash_profile
 ```
 
-VSCode should open with the `.bash_profile` as the current document. If you didn't have a profile before, it'll be empty. Either way, paste the code below at the bottom of your profile:
+VSCode should open the document. If you didn't have a `.zshrc` or `.bash_profile` before, it'll be empty. Either way, paste the code below at the bottom of your profile:
 
 ```bash
 alias python='python3'
@@ -238,7 +255,7 @@ If `<COMMAND>` is an alias, it will tell you what it points to. If `<COMMAND>` i
 These aliases won't automatically be applied in your current terminal, but they will take effect in any new terminal windows you open. Alternatively if you don't want to close/open your terminal you can force the terminal to re-read the newly updated file with:
 
 ```bash
-$ source ~/.bash_profile
+$ source ~/.zshrc
 ```
 
 ## PostgreSQL
@@ -246,23 +263,20 @@ $ source ~/.bash_profile
 We will now install PostgreSQL by running the following command:
 
 ```bash
-$ sudo apt-get install postgresql postgresql-contrib
+$ brew install postgresql
 ```
 
 Start a PostgreSQL instance (in the background) like so:
 
 ```bash
-sudo service postgresql start
+$ brew services restart postgresql@14
 ```
 
 To enter PostgreSQL we will switch our shell user to one named `postgres`, and then we can enter the running PostgreSQL instance.
 
 ```bash
-# switch to the user `postgres`
-$ sudo -i -u postgres
-
-# connect to the running PostgreSQL instance
-$ psql
+# connect to the running PostgreSQL instance as the user 'postgres'
+$ psql postgres
 ```
 
 If your terminal now looks like it does below, you have succesfully installed PostgreSQL:
@@ -281,5 +295,9 @@ You will still be logged in as the user 'postgres' even after this step, so eith
 
 ## Resources for Troubleshooting
 
-- [WSL](https://learn.microsoft.com/en-us/windows/wsl/install)
-- [WSL Best Practices](https://learn.microsoft.com/en-us/windows/wsl/setup/environment)
+- [Use VScode with `code`](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line)
+- [Homebrew](https://brew.sh)
+- [Node and Homebrew](https://changelog.com/posts/install-node-js-with-homebrew-on-os-x)
+- [Python and Homebrew](https://docs.python-guide.org/starting/install3/osx/)
+- [Alias in .zshrc](https://dev.to/stuartcreed/how-to-add-aliases-to-your-terminal-on-mac-os-53dl)
+- [PostgreSQL and Homebrew](https://www.moncefbelyamani.com/how-to-install-postgresql-on-a-mac-with-homebrew-and-lunchy/)
