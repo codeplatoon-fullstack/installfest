@@ -45,7 +45,7 @@ Test that this `code` command actually works before moving on. You may need to c
 
 ## Windows Subsystem for Linux (WSL)
 
-The modern approach to developing on Windows is to install a version of Linux _within_ Windows. This seems tricky, and is sometimes, but it ends up being a much better way to do things in a terminal environment with Windows.
+The modern approach to developing on Windows is to install a version of Linux _within_ Windows. This seems tricky, and it is sometimes, but it ends up being a much better way to do things in a terminal environment with Windows.
 
 First, search for `Windows PowerShell` in the start menu, then right click on it and select 'Run as administrator'. The type:
 
@@ -53,7 +53,7 @@ First, search for `Windows PowerShell` in the start menu, then right click on it
 $ wsl --install
 ```
 
-By default this will install WSL2 on your system and start downloading a version of Linux called Ubuntu. This will take some time and require you to restart your PC when done.
+By default this will install WSL2 on your system and start downloading a version of Linux called Ubuntu. This will take some time and require you to restart your PC (manually) when done.
 
 Once restarted an Ubuntu terminal should automatically run and it will ask you to provide a username and password. Note, this username and password is solely for this Linux distribution and need not match your Windows account info. That said, the password you choose should be relatively simple as you will need to type it in often.
 
