@@ -8,14 +8,19 @@
 
 We are going to install everything that you will need for this course. Please do this in order!
 
-1. Visual Studio Code & `code`
-2. Windows Subsystem for Linux (WSL)
-3. Package Management
-4. Python
-5. Node
-6. Git
-7. Alisases
-8. PostgreSQL
+1. Terminal
+2. Visual Studio Code & `code`
+3. Windows Subsystem for Linux (WSL)
+4. Package Management
+5. Python
+6. Node
+7. Git
+8. Alisases
+9. PostgreSQL
+
+## Terminal
+The default terminal you should use initially is Windows Powershell. You can find this by opening the Start menu and starting to type "powershell".
+
 
 ## Visual Studio Code & `code`
 
@@ -35,6 +40,8 @@ $ code myfile.txt
 Test that this `code` command actually works before moving on. You may need to close and reopen your terminal.
 
 > A note about extensions: You are free to install any/all extensions you find on the VSCode marketplace as they suit you and we will be recommending some throughout the course. That said, I want to strongly advise you to _not_ install any AI code-completion tool like Github Copilot or Tabnine. Your goal in this course is to learn to program and these tools tend to interfere with that process by giving you regular autocompletion options that are not accurate solutions to the problem at hand. These tools have their place, but it is generally a bad habit to copy/paste code you do not understand yourself and these tools make that a seamless process, so please do avoid them for the duration of this course.
+
+> Additionally, as a Windows user, you are going to want to hold off on installing any extensions until we have WSL installed.
 
 ## Windows Subsystem for Linux (WSL)
 
