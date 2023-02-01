@@ -1,6 +1,6 @@
 # MacOS Installfest
 
-## prerequisites
+## Prerequisites
 
 - Make sure you have an Apple ID
 - Download XCode from the Mac App Store (this can take a very long time, and is large)
