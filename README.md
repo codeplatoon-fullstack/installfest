@@ -48,7 +48,7 @@ should result in something like
 $ git config --global user.name "Benjamin Cohen"
 ```
 
-## Computer Setup (Mac, Linux, & Windows)
+## Computer Setup (Mac/Linux/Windows)
 
 Before we get started, just know that this can be chaotic, everyone's environment is slightly different and those little differences are usually the source of bugs that appear on one machine but not on another (seemingly identical) one. Your goal is to get a working environment, or as close to that as you can, so follow the instructions closely, check after every major step that what you tried to install is in fact now available and working, and do not hesitate to reach out to an instructor or TA when something isn't working as expected.
 
