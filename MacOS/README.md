@@ -1,16 +1,10 @@
 # MacOS Installfest
 
-## Prerequesites
+## prerequisites
 
 - Make sure you have an Apple ID
 - Download XCode from the Mac App Store (this can take a very long time, and is large)
-- Ensure that you're running the most recent operating system. You can check your version by going to "System Preferences" and clicking on "Software Update"
-
-## What we'll cover
-
-We are going to install everything that you will need for this course. Please do this in order!
-
-# MacOS Installfest
+- Ensure that you're running the most recent operating system. You can check your version by going to `System Settings -> General -> Software Update`
 
 ## What we'll cover
 
