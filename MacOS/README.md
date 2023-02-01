@@ -3,7 +3,6 @@
 ## Prerequisites
 
 - Make sure you have an Apple ID
-- Download XCode from the Mac App Store (this can take a very long time, and is large)
 - Ensure that you're running the most recent operating system. You can check your version by going to:
 
 ```
@@ -14,20 +13,24 @@ System Settings -> General -> Software Update
 
 We are going to install everything that you will need for this course. Please do this in order!
 
-1. XCode
-2. Visual Studio Code & `code`
-3. Package Management
-4. Python
-5. Node
-6. Git
-7. Alisases
-8. PostgreSQL
+1. Terminal
+2. XCode
+3. Visual Studio Code & `code`
+4. Package Management
+5. Python
+6. Node
+7. Git
+8. Alisases
+9. PostgreSQL
+
+## Terminal
+MacOS has a default terminal application called Terminal. This will suffice, but if you are looking for a more customizable alternative [iterm2](https://iterm2.com/) is a popular choice.
 
 ## XCode
 
-MacOS has a default terminal application called Terminal. This will suffice, but if you are looking for an alternative [iterm2](https://iterm2.com/) is a popular choice.
+- If you don't already have it installed, go to the App Store, search for XCode, and install it. This can take a very long time, and is quite large but unfortunately necessary to do software development on a mac.
 
-Run the following command in the terminal.
+Once Xcode is installed (you may be prompted to restart first) run the following command in the terminal.
 
 ```bash
 $ xcode-select --install
