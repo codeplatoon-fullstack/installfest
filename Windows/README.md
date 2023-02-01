@@ -3,6 +3,7 @@
 ## Prerequesites
 
 - Make sure Windows Update has been run recently
+- Make sure you already have created an account with Github
 
 ## What we'll cover
 
@@ -17,10 +18,13 @@ We are going to install everything that you will need for this course. Please do
 7. Git
 8. Alisases
 9. PostgreSQL
+10. VSCode Extensions
 
 ## Terminal
+
 The default terminal you should use initially is Windows Powershell. You can find this by opening the Start menu and starting to type "powershell".
 
+It isn't a requirement but Microsoft now makes a great terminal environment that is available for free on the Windows Store called Windows Terminal. This is a one stop shop that allows you to open a terminal with either Command Prompt, Windows Powershell, or any other terminal, and will be useful once we get to the WSL phase of these instructions and you will want to regularly open an Ubuntu terminal.
 
 ## Visual Studio Code & `code`
 
@@ -35,6 +39,8 @@ There are many IDEs (integrated development environments) out there that develop
 $ code
 # to open a specific file, specify it as the first argument to `code`
 $ code myfile.txt
+# to open the current folder
+$ code .
 ```
 
 Test that this `code` command actually works before moving on. You may need to close and reopen your terminal.
@@ -47,7 +53,7 @@ Test that this `code` command actually works before moving on. You may need to c
 
 The modern approach to developing on Windows is to install a version of Linux _within_ Windows. This seems tricky, and it is sometimes, but it ends up being a much better way to do things in a terminal environment with Windows.
 
-First, search for `Windows PowerShell` in the start menu, then right click on it and select 'Run as administrator'. The type:
+First, search for `Windows PowerShell` in the start menu, then right click on it and select 'Run as administrator'. Then type:
 
 ```bash
 $ wsl --install
@@ -60,7 +66,7 @@ Once restarted an Ubuntu terminal should automatically run and it will ask you t
 ```bash
 # username will need to be all lowercase
 $ Enter new UNIX username: <username>
-# Once you enter the name it will prompt for your password. Note that you will not see any feedback while typing, not even '*' type masking
+# Once you enter the name it will prompt for your password. Note that you will not see any feedback while typing, not even '****' type masking
 $ New password:
 $ Retype new password:
 ```
@@ -71,11 +77,13 @@ If you see an output at this below than you have succesfully setup your WSL envi
 <username>@<computer_name> $
 ```
 
-In the future you can open up a WSL terminal by searching the Start menu for 'Ubuntu'. I also highly recommend installing the app Windows Terminal from the Windows Store and configuring that to select Ubuntu as the environment by default, as it's a much better terminal experience than the default Ubuntu program.
+In the future you can open up a WSL terminal by searching the Start menu for 'Ubuntu'. I also highly recommended you install the app Windows Terminal from the Windows Store and configure that to select Ubuntu as the environment by default, as it's a much better terminal experience than the default Ubuntu program.
+
+To configure the correct default shell open Windows Terminal and then select `'down arrow' -> Settings -> Startup -> Default Profile -> Ubuntu`
 
 ## Package Management
 
-Now that we are in our WSL environment, package maangement is identical to what it would be like on Linux, so we will be using `apt`.
+Now that we are in our WSL environment, package management is identical to what it would be like on Linux, so we will be using `apt`.
 
 Advanced Package Tool (APT, or `apt`) is a built-in package manager for Ubuntu that handles the installation, versioning and removal of software.
 
@@ -109,7 +117,7 @@ $ sudo apt-get install python3-setuptools
 > $ sudo apt-get install python3 python3-pip python3-setuptools
 > ```
 >
-> This is just a matter of convenience though, installing the packages as seperate commands will result in the same outcome
+> This is just a matter of convenience though, installing the packages as seperate commands will result in the same outcome.
 
 Test that you can run the commands `python3` and `pip`. For `pip` you will simply see some output indicating it's usage, but as long as it recognizes the command as existing you are good. As per usual you may need to close and reopen your terminal to see these working.
 
@@ -127,23 +135,15 @@ Now create a new project with a Python virtual environment like so:
 $ python3 -m venv test_project
 ```
 
-If it works this will create a new folder in your current directory called 'test_project'. Enter into it with:
+If it works this will create a new folder in your current directory called 'test_project'. Inside that folder we should see a bin folder holding an `activate` script, a `pip` script, and several others. Ensure both the activate and pip scripts are present. Do so with:
 
 ```bash
-$ cd test_project
-```
-
-Inside that folder we should see a bin folder holding an `activate` script, a `pip` script, and several others. Ensure both the activate and pip scripts are present. Do so with:
-
-```bash
-$ cd bin
-$ ls
+$ ls test_project/bin
 ```
 
 If you would like to delete it at this point type:
 
 ```bash
-cd ../..
 rm -rf test_project
 ```
 
@@ -164,10 +164,10 @@ Close and reopen your terminal if necessary and test that both the commands `nod
 
 ## `git`
 
-Git may or may not be install by defaullt on your system, but to make sure use `brew` to install it.
+Git may or may not be install by default on your system, but to make sure use `brew` to install it.
 
 ```bash
-$ brew install git
+$ sudo apt-get install git
 ```
 
 Next, we'll configure Git with sensible defaults:
@@ -183,14 +183,20 @@ We also want to make sure that when committing we open the commit message prompt
 git config --global core.editor code
 ```
 
-You can confirm git is configured correctly by running `git config --global -l`. You should see that your username, email, and editor are all listed.
+You can confirm git is configured correctly by running:
+
+```bash
+$ git config --global -l
+```
+
+You should see that your username, email, and editor are all listed.
 
 ### Github and `gh`
 
 Github's preferred way you interact with it now is a command line tool called `gh`. First, you will need a github account to continue, then, in your terminal type:
 
 ```bash
-$ brew install gh
+$ sudo apt-get install gh
 ```
 
 Once downloaded type:
@@ -200,6 +206,8 @@ $ gh auth login
 ```
 
 and follow the wizard steps to complete the authentication process. When done you should be able to close a repo like so:
+
+> Note: On Windows using WSL it is likely not going to be able to open the link for you automatically so you may need to enter it manually into a browser but that isn't something to be concerned about.
 
 ```bash
 $ gh repo clone codeplatoon-fullstack/installfest
@@ -218,8 +226,6 @@ Every time you open your terminal a special file will automatically be read from
 ```bash
 $ echo $SHELL
 ```
-
-The output of this will tell you what shell you are using, which can differ based on your flavor of Linux.
 
 Open this file in VSCode like so:
 
@@ -286,7 +292,36 @@ postgres=# \q
 
 You will still be logged in as the user 'postgres' even after this step, so either close the terminal outright or press `Ctrl-D` to return to the regular terminal environment you began in.
 
-## Resources for Troubleshooting
+## VSCode Extensions
 
-- [WSL](https://learn.microsoft.com/en-us/windows/wsl/install)
-- [WSL Best Practices](https://learn.microsoft.com/en-us/windows/wsl/setup/environment)
+### WSL
+
+Before you download any other extensions search the extension store for 'WSL' and download the extension with that name published by Microsoft. Then close VSCode and, from your WSL terminal type:
+
+```bash
+$ code
+```
+
+This should open VSCode from WSL and initiate some setup it needs to do in order to assume this is your default environment. In general you will want to open VSCode this way, from the command line, and not from double clicking the program from the Windows Start Menu, as VSCode sees these as two seperate environments and they will bne configured differently.
+
+> Its very important you download this extension first, otherwise the next steps won't work quite right!
+
+### Python
+
+Open VSCode from the terminal and create a new file called `example.py`, like so:
+
+```bash
+$ code example.py
+```
+
+This will be enough for VSCode to prompt you to download it's official Python extension. If this doesn't happen for whatever reason, you can select the extension tab on the left pane and search for 'python' and download the one made by Microsoft (it should be the top result). You will know this was succesful if afterwords you can write some simply Python code like:
+
+```py
+print("hello")
+```
+
+and when you hover over the print function with your mouse pointer VSCode gives you some intellisense (essentially in-line documentation about what that bit of code does).
+
+### Live Share
+
+Live Share is another official Microsoft extension that will allow us as instructors and TAs to collaborate with you VSCode in real-time, which can be very helpful when troubleshooting a tricky bug. Search the extensions store for 'Live Share' and make sure it is published by Microsoft and download it. We won't expect you to set it up at this point but it is good enough to have it already installed for now.

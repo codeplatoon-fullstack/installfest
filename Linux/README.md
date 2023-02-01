@@ -3,18 +3,31 @@
 ## Prerequesites
 
 - Make sure your system is up to date and run any 'check for updates' command that is built into the OS
+- Make sure you already have created an account with Github
 
 ## What we'll cover
 
 We are going to install everything that you will need for this course. Please do this in order!
 
-1. Visual Studio Code & `code`
-2. Package Management
-3. Python
-4. Node
-5. Git
-6. Alisases
-7. PostgreSQL
+1. Terminal
+2. Visual Studio Code & `code`
+3. Package Management
+4. Python
+5. Node
+6. Git
+7. Alisases
+8. PostgreSQL
+9. VSCode Extensions
+
+## Terminal
+
+If you are on Linux we are going to assume you already know what a terminal is and have one ready to go.
+
+These instructions are going to assume that your terminal is using `bash` as the main shell, but if `zsh` is the default on your system we will note when that difference matters. If you are in doubt what shell you are using type this into your terminal and note the result:
+
+```bash
+$ echo $SHELL
+```
 
 ## Visual Studio Code & `code`
 
@@ -29,6 +42,8 @@ There are many IDEs (integrated development environments) out there that develop
 $ code
 # to open a specific file, specify it as the first argument to `code`
 $ code myfile.txt
+# to open the current folder
+$ code .
 ```
 
 Test that this `code` command actually works before moving on. You may need to close and reopen your terminal.
@@ -87,23 +102,15 @@ Now create a new project with a Python virtual environment like so:
 $ python3 -m venv test_project
 ```
 
-If it works this will create a new folder in your current directory called 'test_project'. Enter into it with:
+If it works this will create a new folder in your current directory called 'test_project'. Inside that folder we should see a bin folder holding an `activate` script, a `pip` script, and several others. Ensure both the activate and pip scripts are present. Do so with:
 
 ```bash
-$ cd test_project
-```
-
-Inside that folder we should see a bin folder holding an `activate` script, a `pip` script, and several others. Ensure both the activate and pip scripts are present. Do so with:
-
-```bash
-$ cd bin
-$ ls
+$ ls test_project/bin
 ```
 
 If you would like to delete it at this point type:
 
 ```bash
-cd ../..
 rm -rf test_project
 ```
 
@@ -245,3 +252,19 @@ postgres=# \q
 ```
 
 You will still be logged in as the user 'postgres' even after this step, so either close the terminal outright or press `Ctrl-D` to return to the regular terminal environment you began in.
+
+## VSCode Extensions
+
+### Python
+
+Open VSCode and create a new file called `example.py`. This will be enough for VSCode to prompt you to download it's official Python extension. If this doesn't happen for whatever reason, you can select the extension tab on the left pane and search for 'python' and download the one made by Microsoft (it should be the top result). You will know this was succesful if afterwords you can write some simply Python code like:
+
+```py
+print("hello")
+```
+
+and when you hover over the print function with your mouse pointer VSCode gives you some intellisense (essentially in-line documentation about what that bit of code does).
+
+### Live Share
+
+Live Share is another official Microsoft extension that will allow us as instructors and TAs to collaborate with you VSCode in real-time, which can be very helpful when troubleshooting a tricky bug. Search the extensions store for 'Live Share' and make sure it is published by Microsoft and download it. We won't expect you to set it up at this point but it is good enough to have it already installed for now.
