@@ -54,6 +54,14 @@ should result in something like
 $ git config --global user.name "Benjamin Cohen"
 ```
 
+## `sudo`
+
+A note on the `sudo` command: Some commands (especially ones involved in downloading new software) require elevated permission compared to what a regular user normally posesses. This is a somewhat advanced topic to go into detail about, but the basic solution to temporarily elevating one's permissions is to use the command `sudo`. `sudo` stands for 'Super User DO' and is a way of temporarily elevating the current user's permissions by first prompting them for their password (it's the same password you use to login).
+
+## Good to Know
+
+Throughout this course we will ask you to install and then test various pieces of command line software. Once entering into that software (for example, after executing `python3`) you might not know how to exit. All programs will respond to two commands called 'interrupts'. The first is `Ctrl-C` which you can think of as a 'soft' interrupt, in that many programs will simply identify that you pressed this but not outright exit as a result. The second is `Ctrl-D` which is a 'hard' interrupt, most programs will outright exit as a result, and if you do it at the top level of your terminal shell it will kill even that! So, as a rule of thumb first try `Ctrl-C` and if that fails then try `Ctrl-D` to exit a running terminal program. If even that fails you should just close and reopen your terminal.
+
 ## Computer Setup (Mac/Linux/Windows)
 
 Before we get started, just know that this can be chaotic, everyone's environment is slightly different and those little differences are usually the source of bugs that appear on one machine but not on another (seemingly identical) one. Your goal is to get a working environment, or as close to that as you can, so follow the instructions closely, check after every major step that what you tried to install is in fact now available and working, and do not hesitate to reach out to an instructor or TA when something isn't working as expected.

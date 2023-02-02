@@ -54,18 +54,11 @@ Test that this `code` command actually works before moving on. You may need to c
 
 Advanced Package Tool (APT, or `apt`) is a built-in package manager for Ubuntu that handles the installation, versioning and removal of software.
 
-### `sudo`
-
-Some commands (especially ones involved in downloading new software) require elevated permission compared to what a regular user normally posesses. This is a somewhat advanced topic to go into detail about, but the basic solution to temporarily elevating one's permissions is to use the command `sudo`. `sudo` stands for Super User DO and is a way of temporarily elevating the current user's permissions by first prompting them for their password (it's the same password you use to login).
-
-### Updating
-
 The `update` command in apt will fetch a list of packages from an external source that are available for download. This list changes frequently so it's important to run the update command before installing anything to ensure you will be fetching the latest package and not an outdated one.
 
 ```bash
 # update the list of external packages that are available for install
 $ sudo apt-get update
-# you will be prompted for your password at this point
 ```
 
 ## Python
@@ -84,9 +77,9 @@ $ sudo apt-get install python3-setuptools
 > $ sudo apt-get install python3 python3-pip python3-setuptools
 > ```
 >
-> This is just a matter of convenience though, installing the packages as seperate commands will result in the same outcome
+> This is just a matter of convenience though, installing the packages as seperate commands will result in the same outcome.
 
-Test that you can run the commands `python3` and `pip`. For `pip` you will simply see some output indicating it's usage, but as long as it recognizes the command as existing you are good. As per usual you may need to close and reopen your terminal to see these working.
+Test that you can run the commands `python3` and `pip3`. For `pip3` you will simply see some output indicating it's usage, but as long as it recognizes the command as existing you are good. As per usual you may need to close and reopen your terminal to see these working.
 
 ### Python Virtual Environment
 
@@ -102,7 +95,7 @@ Now create a new project with a Python virtual environment like so:
 $ python3 -m venv test_project
 ```
 
-If it works this will create a new folder in your current directory called 'test_project'. Inside that folder we should see a bin folder holding an `activate` script, a `pip` script, and several others. Ensure both the activate and pip scripts are present. Do so with:
+If it works this will create a new folder in your current directory called 'test_project'. Inside that folder we should see a bin folder holding an `activate` script, a `pip` script, and several others. Ensure both the `activate` and `pip` scripts are present. Do so with:
 
 ```bash
 $ ls test_project/bin
@@ -180,7 +173,7 @@ $ rm -rf installfest
 
 ## Alisases
 
-Every time you open your terminal a special file will automatically be read from to do any necessary 'setup' type work. Assuming the terminal you are using is `bash` this file will be called `.bash_profile`. If you are using `zsh` it will `.zshrc`. If you are unsure what terminal you are running type:
+Every time you open your terminal a special file will automatically be read from to do any necessary 'setup' type work. Assuming the terminal you are using is `bash` this file will be called `.bash_profile`. If you are using `zsh` it will be called `.zshrc`. If you are unsure what terminal you are running type:
 
 ```bash
 $ echo $SHELL
