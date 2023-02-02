@@ -1,9 +1,3 @@
-> This the WORKING COPY version, for instructors to update as they wish.
-
-> **DO NOT SHARE WITH STUDENTS**
-
-> That is, until instructor-only files like 'THINGS_I_REMOVED.md' are removed (ironic)
-
 # Installfest
 
 ## Topics Covered / Goals
