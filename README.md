@@ -1,30 +1,68 @@
 # Installfest
 
-
 ## Topics Covered / Goals
+
 - Get your local machine set up to start the course
 - Exploring your IDE (VSCode)
 
-## Computer Setup (Mac, Linux, & Windows)
-Before we get started, just know that this will be chaos. Your goal is to get a working environment. Please follow along closely!
+## Conventions
+
+Throughout this installfest document we will be asking you to type commands into a terminal shell, which will differ based on your operating system. No matter which operating system/terminal shell you are using, we will represent inputting a command into this environment like so:
+
+```bash
+$ touch myfile.txt
+```
+
+The `$` is there to represent everything that comes before the section where you actually input the command, which on my local environment looks like:
+
+![Command Prompt Example](./resources/command-prompt.png)
+
+If we don't include the `$` that means it's just an ordinary code snippet to be pasted into VSCode, for example:
+
+```js
+console.log("hello");
+```
+
+Alternatively, if you are in a unique environment that isn't just your ordinary terminal shell we will specify it explicitly like so:
+
+```bash
+postgres=#
+```
+
+Additionally, sometimes we will want to explain what the command does in the snippet we share. We can do this using comment syntax, which you are familiar with from the JavaScript pre-work, but in a terminal environment comments begin with a `#`. So for example, we might share a command like so:
+
+```bash
+# this command will create a new blank file in the current directory and name it 'myfile.txt'
+$ touch myfile.txt
+```
+
+Sometimes you will also need to replace a value in the command we provide with one unique to you. In that case we will use syntax like `<YOUR_FILE>` to indicate such a value. So for example, the command:
+
+```bash
+$ git config --global user.name "<YOUR_NAME>"
+```
+
+should result in something like
+
+```bash
+$ git config --global user.name "Benjamin Cohen"
+```
+
+## Computer Setup (Mac/Linux/Windows)
+
+Before we get started, just know that this can be chaotic, everyone's environment is slightly different and those little differences are usually the source of bugs that appear on one machine but not on another (seemingly identical) one. Your goal is to get a working environment, or as close to that as you can, so follow the instructions closely, check after every major step that what you tried to install is in fact now available and working, and do not hesitate to reach out to an instructor or TA when something isn't working as expected.
+
 - [Slack](https://slack.com/downloads) - for all communication purposes
-- [Zoom](https://zoom.us/support/download)
-### MacOs
-- [Mac](https://github.com/codeplatoon-fullstack/installfest/tree/main/MacOs)
+- [Zoom](https://zoom.us/support/download) - for participating in the class in real time
+
+### MacOS
+
+- [Mac](./MacOS/README.md)
+
 ### Windows
-- [Windows](https://github.com/codeplatoon-fullstack/installfest/tree/main/Windows)
+
+- [Windows](./Windows/README.md)
+
 ### Linux
-- [Linux](https://github.com/codeplatoon-fullstack/installfest/tree/main/Linux)
 
-
-## Visual Studio Code
-
-There are many IDEs (integrated development environments) out there that developers can use. For our class, we're going to be using Visual Studio Code, a free IDE created by Microsoft. By default, VSCode is a powerful, flexible editor that supports many different coding languages. However, VSCode is also highly extensible, with a rich ecosystem of plugins. 
-
-`Here is a list of recommended extensions we will use to build applications with VSCode:`
-
-| JavaScript | Python    | HTML & CSS| Django | React.js |
-| :-------- | :------- | :-------- |:------- |:------- |
-| [JavaScript (ES6) code snippets](https://marketplace.visualstudio.com/items?itemName=xabikos.JavaScriptSnippets) | [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) |[HTML Boilerplate](https://marketplace.visualstudio.com/items?itemName=sidthesloth.html5-boilerplate)|[Django](https://marketplace.visualstudio.com/items?itemName=batisteo.vscode-django) |[ES7 React/Redux/GraphQL/React-Native snippets](https://marketplace.visualstudio.com/items?itemName=rodrigovallades.es7-react-js-snippets)|
-| [Prettier - JavaScript formatter](https://marketplace.visualstudio.com/items?itemName=bysabi.prettier-vscode-standard)| [Python Extension Pack](https://marketplace.visualstudio.com/items?itemName=donjayamanne.python-extension-pack)|[HTML CSS Support](https://marketplace.visualstudio.com/items?itemName=ecmel.vscode-html-css)| [Django](https://marketplace.visualstudio.com/items?itemName=bigonesystems.django)|[React code snippets](https://marketplace.visualstudio.com/items?itemName=hazer.ReactCodeSnippets)|
-| [Bracket Pair Colorization Toggler](https://marketplace.visualstudio.com/items?itemName=dzhavat.bracket-pair-toggler) | [Python Indent](https://marketplace.visualstudio.com/items?itemName=KevinRose.vsc-python-indent)|[Live Server]( https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) |[Django Snippets](https://marketplace.visualstudio.com/items?itemName=bibhasdn.django-snippets)|[React Bootstrap 4 Snippets](https://marketplace.visualstudio.com/items?itemName=Himel.react-bootstrap4)|
+- [Linux](./Linux/README.md)
