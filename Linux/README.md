@@ -1,6 +1,6 @@
-# Linux Installfest
+﻿# Linux Installfest
 
-## Prerequesites
+## Prerequisites
 
 - Make sure your system is up to date and run any 'check for updates' command that is built into the OS
 - Make sure you already have created an account with Github
@@ -15,7 +15,7 @@ We are going to install everything that you will need for this course. Please do
 4. Python
 5. Node
 6. Git
-7. Alisases
+7. Aliases
 8. PostgreSQL
 9. VSCode Extensions
 
@@ -34,7 +34,7 @@ $ echo $SHELL
 There are many IDEs (integrated development environments) out there that developers can use. For our class, we're going to be using Visual Studio Code, a free IDE created by Microsoft. VSCode is a powerful, flexible editor that supports many different coding languages. VSCode is also highly extensible, with a rich ecosystem of plugins.
 
 - Download [Visual Studio Code](https://code.visualstudio.com/download) and click on the `.deb` installer (assuming you are on Ubuntu, otherwise you are on your own).
-- During install, VSCode will by default ask to add itself to your system's PATH envirnmental variable - keep this box checked!
+- During install, VSCode will by default ask to add itself to your system's PATH environmental variable - keep this box checked!
 - This will allow you to open VSCode from the terminal using the command `code` like so:
 
 ```bash
@@ -48,7 +48,7 @@ $ code .
 
 Test that this `code` command actually works before moving on. You may need to close and reopen your terminal.
 
-> A note about extensions: You are free to install any/all extensions you find on the VSCode marketplace as they suit you and we will be recommending some throughout the course. That said, I want to strongly advise you to _not_ install any AI code-completion tool like Github Copilot or Micrsoft's IntelliCode. Your goal in this course is to learn to program and these tools tend to interfere with that process by giving you regular autocompletion options that are not accurate solutions to the problem at hand. These tools have their place, but it is generally a bad habit to copy/paste code you do not understand yourself and these tools make that a seamless process, so please do avoid them for the duration of this course.
+> A note about extensions: You are free to install any/all extensions you find on the VSCode marketplace as they suit you and we will be recommending some throughout the course. That said, I want to strongly advise you to _not_ install any AI code-completion tool like Github Copilot or Microsoft's IntelliCode. Your goal in this course is to learn to program and these tools tend to interfere with that process by giving you regular autocompletion options that are not accurate solutions to the problem at hand. These tools have their place, but it is generally a bad habit to copy/paste code you do not understand yourself and these tools make that a seamless process, so please do avoid them for the duration of this course.
 
 ## Package Management
 
@@ -58,7 +58,7 @@ The `update` command in apt will fetch a list of packages from an external sourc
 
 ```bash
 # update the list of external packages that are available for install
-$ sudo apt-get update
+$ sudo apt update
 ```
 
 ## Python
@@ -66,27 +66,27 @@ $ sudo apt-get update
 Python comes built in with Ubuntu but to ensure that we have the must up to date version, let's run the following commands:
 
 ```bash
-$ sudo apt-get install python3
-$ sudo apt-get install python3-pip
-$ sudo apt-get install python3-setuptools
+$ sudo apt install python3
+$ sudo apt install python3-pip
+$ sudo apt install python3-setuptools
 ```
 
-> Note: if you ever need to install multiple packages simultaneously, apt-get supports this like so:
+> Note: if you ever need to install multiple packages simultaneously, apt install supports this like so:
 >
 > ```bash
-> $ sudo apt-get install python3 python3-pip python3-setuptools
+> $ sudo apt install python3 python3-pip python3-setuptools
 > ```
 >
-> This is just a matter of convenience though, installing the packages as seperate commands will result in the same outcome.
+> This is just a matter of convenience though, installing the packages as separate commands will result in the same outcome.
 
 Test that you can run the commands `python3` and `pip3`. For `pip3` you will simply see some output indicating it's usage, but as long as it recognizes the command as existing you are good. As per usual you may need to close and reopen your terminal to see these working.
 
 ### Python Virtual Environment
 
-Python uses the concept of a 'virtual envrionment' to install packages through pip uniquely for a given project. In order to make creating such environments possible first install the necessary tool:
+Python uses the concept of a 'virtual environment' to install packages through pip uniquely for a given project. In order to make creating such environments possible first install the necessary tool:
 
 ```bash
-$ sudo apt-get install python3.10-venv
+$ sudo apt install python3.10-venv
 ```
 
 Now create a new project with a Python virtual environment like so:
@@ -113,7 +113,7 @@ In this section, we'll use `apt` to install `npm`, the default package manager f
 
 ```bash
 # use apt to install npm
-$ sudo apt-get install npm
+$ sudo apt install npm
 # use npm to install n (-g means globally, as opposed to in a specific project/folder)
 $ sudo npm install -g n
 # use n to install the latest stable version of node
@@ -124,10 +124,10 @@ Close and reopen your terminal if necessary and test that both the commands `nod
 
 ## `git`
 
-Git may or may not be install by defaullt on your system, but to make sure use `apt` to install it.
+Git may or may not be install by default on your system, but to make sure use `apt` to install it.
 
 ```bash
-$ sudo apt-get install git
+$ sudo apt install git
 ```
 
 Next, we'll configure Git with sensible defaults:
@@ -150,7 +150,7 @@ You can confirm git is configured correctly by running `git config --global -l`.
 Github's preferred way you interact with it now is a command line tool called `gh`. First, you will need a github account to continue, then, in your terminal type:
 
 ```bash
-$ sudo apt-get install gh
+$ sudo apt install gh
 ```
 
 Once downloaded type:
@@ -159,7 +159,7 @@ Once downloaded type:
 $ gh auth login
 ```
 
-and follow the wizard steps to complete the authentication process. When done you should be able to close a repo like so:
+and follow the wizard steps to complete the authentication process. When done you should be able to clone a repo like so:
 
 ```bash
 $ gh repo clone codeplatoon-fullstack/installfest
@@ -171,7 +171,7 @@ This will install that repo in your current directory. Assuming this is successf
 $ rm -rf installfest
 ```
 
-## Alisases
+## Aliases
 
 Every time you open your terminal a special file will automatically be read from to do any necessary 'setup' type work. Assuming the terminal you are using is `bash` this file will be called `.bash_profile`. If you are using `zsh` it will be called `.zshrc`. If you are unsure what terminal you are running type:
 
@@ -213,7 +213,7 @@ $ source ~/.bash_profile
 We will now install PostgreSQL by running the following command:
 
 ```bash
-$ sudo apt-get install postgresql postgresql-contrib
+$ sudo apt install postgresql postgresql-contrib
 ```
 
 Start a PostgreSQL instance (in the background) like so:
@@ -238,7 +238,7 @@ If your terminal now looks like it does below, you have succesfully installed Po
 postgres=#
 ```
 
-To exit out of this enviroment type
+To exit out of this environment type
 
 ```
 postgres=# \q
@@ -250,7 +250,7 @@ You will still be logged in as the user 'postgres' even after this step, so eith
 
 ### Python
 
-Open VSCode and create a new file called `example.py`. This will be enough for VSCode to prompt you to download it's official Python extension. If this doesn't happen for whatever reason, you can select the extension tab on the left pane and search for 'python' and download the one made by Microsoft (it should be the top result). You will know this was succesful if afterwords you can write some simply Python code like:
+Open VSCode and create a new file called `example.py`. This will be enough for VSCode to prompt you to download it's official Python extension. If this doesn't happen for whatever reason, you can select the extension tab on the left pane and search for 'python' and download the one made by Microsoft (it should be the top result). You will know this was successful if afterwords you can write some simply Python code like:
 
 ```py
 print("hello")
