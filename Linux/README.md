@@ -216,6 +216,12 @@ We will now install PostgreSQL by running the following command:
 $ sudo apt install postgresql postgresql-contrib
 ```
 
+Before starting the PostreSQL service, a database must be initialized:
+
+```
+sudo postgresql-setup --initdb --unit postgresql
+```
+
 Start a PostgreSQL instance (in the background) like so:
 
 ```bash
