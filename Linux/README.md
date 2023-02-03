@@ -225,7 +225,7 @@ sudo postgresql-setup --initdb --unit postgresql
 Start a PostgreSQL instance (in the background) like so:
 
 ```bash
-sudo service postgresql start
+sudo systemctl start postgresql
 ```
 
 To enter PostgreSQL we will switch our shell user to one named `postgres`, and then we can enter the running PostgreSQL instance.
