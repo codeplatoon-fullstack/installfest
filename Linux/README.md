@@ -173,7 +173,7 @@ $ rm -rf installfest
 
 ## Aliases
 
-Every time you open your terminal a special file will automatically be read from to do any necessary 'setup' type work. Assuming the terminal you are using is `bash` this file will be called `.bash_profile`. If you are using `zsh` it will be called `.zshrc`. If you are unsure what terminal you are running type:
+Every time you open your terminal a special file will automatically be read from to do any necessary 'setup' type work. Assuming the terminal you are using is `bash` this file will be called `.bashrc`. If you are using `zsh` it will be called `.zshrc`. If you are unsure what terminal you are running type:
 
 ```bash
 $ echo $SHELL
@@ -184,10 +184,10 @@ The output of this will tell you what shell you are using, which can differ base
 Open this file in VSCode like so:
 
 ```bash
-$ code ~/.bash_profile
+$ code ~/.bashrc
 ```
 
-VSCode should open with the `.bash_profile` as the current document. If you didn't have a profile before, it'll be empty. Either way, paste the code below at the bottom of your profile:
+VSCode should open with the `.bashrc` as the current document. Paste the code below at the bottom of your profile or under the ```# User specific aliases and functions``` comment: 
 
 ```bash
 alias python='python3'
@@ -205,7 +205,7 @@ If `<COMMAND>` is an alias, it will tell you what it points to. If `<COMMAND>` i
 These aliases won't automatically be applied in your current terminal, but they will take effect in any new terminal windows you open. Alternatively if you don't want to close/open your terminal you can force the terminal to re-read the newly updated file with:
 
 ```bash
-$ source ~/.bash_profile
+$ source ~/.bashrc
 ```
 
 ## PostgreSQL
