@@ -80,7 +80,7 @@ $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/
 
 > It isn't important to understand the details but `bash` is a specific shell (the default on older macs) and `curl` is a program that allows us to install a file from a url.
 
-> It is not necessary that you read the output but Homebrew will be installing Command Line Tools for XCode first if you do not already have it. This might take a fair bit of time (up to 15 minutes), but it's a welcome improvement from the previous solution of downloading all of XCode (Apple's one stop shop for doing development on a Mac) which is far larger (up to 3 hours).
+It is not necessary that you read the output but **Homebrew will be installing XCode Command Line Tools first if you do not already have it. This is required for git and other command line programs.** This might take a fair bit of time (up to 15 minutes), but it's a welcome improvement from the previous solution of downloading all of XCode (Apple's one stop shop for doing development on a Mac) which is far larger (up to 3 hours).
 
 Let's check if we've installed homebrew correctly. You may need to close and reopen your terminal first.
 
@@ -111,6 +111,23 @@ $ brew doctor
 ```
 
 Warnings are good to read but are not mandatory to fix, so continue on for now and reach out if you hit a snag down the line.
+
+#### Confirm XCode Command Line Tools is Installed
+
+Finally, let's check that XCode Command Line Tools has been installed.
+```bash
+$ clang --version
+```
+
+You should see a message with version information and a directory path showing where clang is installed. clang is a C compiler installed by XCode Command Line tools. If we are able to run it to check it's version, that tells us XCode Command Line Tools has been successfully installed. 
+
+If you do not see any message, try [installing XCode Commmand Line Tools manually]([XCode Command Line Tools](https://mac.install.guide/commandlinetools/4.html):
+```bash
+$ xcode-select --install
+```
+
+Then try the previous verification step. If that does not work, reach out for help.
+
 
 ### Modifying `~/.zshrc`
 
