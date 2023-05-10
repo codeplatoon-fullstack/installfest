@@ -314,6 +314,12 @@ $ source ~/.zshrc
 
 ## PostgreSQL
 
+### The Recommended Way
+By far the easiest way to install PostgreSQL on Mac OS X is the the excellent [postgresapp](https://postgresapp.com/). This should set up postgres to be used from the command line and also gives you a GUI if desired. **We highly recommend installing this way on Mac.**
+
+### Installing with Package Manager (Not Recommended).
+If you have a specific reason to, here is how to install PostgreSQL using a package manager.
+
 We will now install PostgreSQL by running the following command:
 
 ```bash
