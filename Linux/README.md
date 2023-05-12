@@ -222,10 +222,10 @@ Before starting the PostreSQL service, a database must be initialized:
 sudo postgresql-setup --initdb --unit postgresql
 ```
 
-Start a PostgreSQL instance (in the background) like so:
+Start a PostgreSQL instance (in the background) and have it start everytime you log in like so:
 
 ```bash
-sudo systemctl start postgresql
+sudo systemctl enable --now postgresql
 ```
 
 To enter PostgreSQL we will switch our shell user to one named `postgres`, and then we can enter the running PostgreSQL instance.
@@ -242,6 +242,12 @@ If your terminal now looks like it does below, you have succesfully installed Po
 
 ```
 postgres=#
+```
+
+Now we are going at a ROLE in POSTGRES:
+
+```
+CREATE ROLE <your user name> LOGIN;
 ```
 
 To exit out of this environment type
