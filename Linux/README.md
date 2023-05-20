@@ -63,113 +63,15 @@ $ sudo apt update
 
 ## Python
 
-Python comes built in with Ubuntu but to ensure that we have the must up to date version, let's run the following commands:
+See [installing Python on Ubuntu Linux.](./python.md)
 
-```bash
-$ sudo apt install python3
-$ sudo apt install python3-pip
-$ sudo apt install python3-setuptools
-```
+## Node.js
 
-> Note: if you ever need to install multiple packages simultaneously, apt install supports this like so:
->
-> ```bash
-> $ sudo apt install python3 python3-pip python3-setuptools
-> ```
->
-> This is just a matter of convenience though, installing the packages as separate commands will result in the same outcome.
-
-Test that you can run the commands `python3` and `pip3`. For `pip3` you will simply see some output indicating it's usage, but as long as it recognizes the command as existing you are good. As per usual you may need to close and reopen your terminal to see these working.
-
-### Python Virtual Environment
-
-Python uses the concept of a 'virtual environment' to install packages through pip uniquely for a given project. In order to make creating such environments possible first install the necessary tool:
-
-```bash
-$ sudo apt install python3.10-venv
-```
-
-Now create a new project with a Python virtual environment like so:
-
-```bash
-$ python3 -m venv test_project
-```
-
-If it works this will create a new folder in your current directory called 'test_project'. Inside that folder we should see a bin folder holding an `activate` script, a `pip` script, and several others. Ensure both the `activate` and `pip` scripts are present. Do so with:
-
-```bash
-$ ls test_project/bin
-```
-
-If you would like to delete it at this point type:
-
-```bash
-rm -rf test_project
-```
-
-## Node
-
-In this section, we'll use `apt` to install `npm`, the default package manager for node. We'll then use `npm` to install `n`, which is a tool to help manage different versions of `node`. Lastly, we'll use `n` to install the latest stable version of `node`.
-
-```bash
-# use apt to install npm
-$ sudo apt install npm
-# use npm to install n (-g means globally, as opposed to in a specific project/folder)
-$ sudo npm install -g n
-# use n to install the latest stable version of node
-$ sudo n stable
-```
-
-Close and reopen your terminal if necessary and test that both the commands `node` and `npm` are recognized.
+See [Installing node.js on Ubuntu Linux](./node.md)
 
 ## `git`
 
-Git may or may not be install by default on your system, but to make sure use `apt` to install it.
-
-```bash
-$ sudo apt install git
-```
-
-Next, we'll configure Git with sensible defaults:
-
-```bash
-$ git config --global user.name "<YOUR_NAME>"
-$ git config --global user.email "<YOUR_EMAIL>"
-```
-
-We also want to make sure that when committing we open the commit message prompt in VSCode (default will be `vim` and you will not like it):
-
-```bash
-git config --global core.editor code
-```
-
-You can confirm git is configured correctly by running `git config --global -l`. You should see that your username, email, and editor are all listed.
-
-### Github and `gh`
-
-Github's preferred way you interact with it now is a command line tool called `gh`. First, you will need a github account to continue, then, in your terminal type:
-
-```bash
-$ sudo apt install gh
-```
-
-Once downloaded type:
-
-```bash
-$ gh auth login
-```
-
-and follow the wizard steps to complete the authentication process. When done you should be able to clone a repo like so:
-
-```bash
-$ gh repo clone codeplatoon-fullstack/installfest
-```
-
-This will install that repo in your current directory. Assuming this is successful if you want to delete it afterwards type:
-
-```bash
-$ rm -rf installfest
-```
+See [Installing git and Github CLI on Ubuntu Linux](./git.md)
 
 ## Aliases
 
@@ -210,57 +112,11 @@ $ source ~/.bashrc
 
 ## PostgreSQL
 
-We will now install PostgreSQL by running the following command:
-
-```bash
-$ sudo apt install postgresql postgresql-contrib
-```
-
-Before starting the PostreSQL service, a database must be initialized:
-
-```
-sudo postgresql-setup --initdb --unit postgresql
-```
-
-Start a PostgreSQL instance (in the background) and have it start everytime you log in like so:
-
-```bash
-sudo systemctl enable --now postgresql
-```
-
-To enter PostgreSQL we will switch our shell user to one named `postgres`, and then we can enter the running PostgreSQL instance.
-
-```bash
-# switch to the user `postgres`
-$ sudo -i -u postgres
-
-# connect to the running PostgreSQL instance
-$ psql
-```
-
-If your terminal now looks like it does below, you have succesfully installed PostgreSQL:
-
-```
-postgres=#
-```
-
-Now we are going at a ROLE in POSTGRES:
-
-```
-CREATE ROLE <your user name> LOGIN;
-```
-
-To exit out of this environment type
-
-```
-postgres=# \q
-```
-
-You will still be logged in as the user 'postgres' even after this step, so either close the terminal outright or press `Ctrl-D` to return to the regular terminal environment you began in.
+See [Installing Postgres on Ubuntu Linux](./postgres.md)
 
 ## VSCode Extensions
 
-### Python
+### For Python
 
 Open VSCode and create a new file called `example.py`. This will be enough for VSCode to prompt you to download it's official Python extension. If this doesn't happen for whatever reason, you can select the extension tab on the left pane and search for 'python' and download the one made by Microsoft (it should be the top result). You will know this was successful if afterwords you can write some simply Python code like:
 
